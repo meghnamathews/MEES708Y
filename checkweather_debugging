@@ -1,0 +1,75 @@
+temp = -50
+
+if (temp < 0) {
+  print("It's freezing!")
+  if (temp < 32) {
+    print("And kids don't go to school")
+  }
+} else {
+  print("It's not freezing.")
+}
+
+x = 50
+checkweather <- function(x, verbose = FALSE,
+                         alternative = c("two.sided", "less", "greater"),
+                         y) {
+}
+# x is temperature, degrees C
+# verbose is logical value, indicating to print results
+if (FALSE) {
+  x = 5
+  verbose = FALSE
+  alternative = "less"
+  y = x
+}
+alt = match.arg(alternative, c("two.sided", "less", "greater"))
+#xf <- 32 + 1.8*x
+# print(paste0("In Farenheit it is ", xf, "."))
+if (verbose) {
+  if (x < 0) {
+  }
+}
+tempF = checkweather(55)
+checkweather(0)
+
+###### DEBUGGING ######
+as.Date(c("2011-04-05", 35))
+
+X <- rep(NA, nrow(swiss))
+for (i in 1:nrow(swiss)) { # i = 1
+  m = lm(unlist(swiss[i, ]) ~ 1)
+  x[i] = m$coefficients[1]
+}
+X
+
+#Warning
+tmp <- log(-pi)
+is.na(tmp)
+
+library(dplyr)
+swiss %>%
+  filter(!is.na(Agriculture))
+
+# Error
+lm(x~y) #we do not have x and y in our environment
+
+### TOOLS
+traceback()
+
+mean(x)
+traceback()
+
+# browser() and debug()
+source('MyFunctions.R')
+
+debug(checkweather)
+checkweather(-80, verbose = TRUE)
+undebug(checkweather)
+
+debug(mean)
+mean(x)
+undebug(mean)
+
+debug(funtimes::ARest)
+funtimes::ARest(x = rnorm(100))
+undebug(funtimes::ARest)
